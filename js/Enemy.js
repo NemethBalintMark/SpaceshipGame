@@ -51,7 +51,7 @@ class Enemy {
         this.#fallInterval = setInterval(() => {
             this.#y += 50;
             this.#element.style.top = this.#y + "px";
-            if (this.#y > this.#container.offsetHeight) {
+            if (this.#y >= 700) {
                 lose();
                 this.remove();
             }
