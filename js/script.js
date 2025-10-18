@@ -13,8 +13,11 @@ document.querySelector(".startButton").addEventListener("click", () => {
             updateScore(1);
         }, 1000);
 
-        document.createElement("div");
-        
+        var player = document.createElement("div");
+        player.classList.add("player");
+        player.style.left = 300 + "px";
+        player.style.top = 700 + "px";
+
         gameInterval = setInterval(() => {
             var x = (Math.floor(Math.random() * 12) + 1) * 50;
             var enemy = new Enemy(x, 0, "section");
