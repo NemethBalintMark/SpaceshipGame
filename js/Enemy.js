@@ -36,6 +36,7 @@ class Enemy {
     createEnemy() {
             this.#element = document.createElement("div");
             this.#isStrong = parseInt(Math.random() * 2);
+            this.#element.classList.add("enemy");
             this.#element.classList.add(this.#isStrong == 0 ? "weak" : "strong");
             this.setHealth(this.#isStrong == 0 ? 1 : 3);
 
@@ -50,7 +51,7 @@ class Enemy {
             this.#y += 50;
             this.#element.style.top = this.#y + "px";
             if (this.#y > this.#container.offsetHeight) {
-                this.hit();
+                lose();
                 this.remove();
             }
         }, 500);
