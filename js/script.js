@@ -10,7 +10,6 @@ document.querySelector(".startButton").addEventListener("click", () => {
         gameInterval = setInterval( () => {
             var x = (Math.floor(Math.random() * 12) + 1) * 50;
             var enemy = new Enemy(x, 0, "section");
-            enemy.createEnemy();
             enemy.fall();
         }, 1000);
     }
