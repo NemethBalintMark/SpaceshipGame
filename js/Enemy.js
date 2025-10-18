@@ -45,7 +45,7 @@ class Enemy {
             this.#element.style.top = this.#y + "px";
 
             this.#container.appendChild(this.#element);
-    }
+    } 
 
     fall() {
         this.#fallInterval = setInterval(() => {
