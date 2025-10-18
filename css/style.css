@@ -17,10 +17,6 @@ h2{
     width: 160px;
     margin-bottom: -5px;
 }
-img{
-    width: 70px;
-    height: 70px;
-}
 .btn{
     background-color: #000;
     height: 50px;
@@ -36,4 +32,14 @@ img{
 }
 .stop{
     margin-left: 189px;
+}
+.weak{
+    background-image: url(../img/small-enemy.png);
+}
+.strong{
+    background-image: url(../img/big-enemy.png);
+}
+.enemy{
+    width: 50px;
+    height: 50px;
 }
