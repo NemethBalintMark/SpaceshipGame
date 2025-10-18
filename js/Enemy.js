@@ -11,6 +11,7 @@ class Enemy {
         this.setX(x);
         this.setY(y);
         this.setContainer(container);
+        this.createEnemy();
     }
 
     setHealth(health) {
