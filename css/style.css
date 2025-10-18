@@ -20,10 +20,12 @@ h2{
 }
 .btn{
     background-color: #000;
-    height: 50px;
     font-size: 22px;
     font-style: italic;
     border: 2px solid #fff;
+}
+.btn, .enemy{
+    height: 50px;
 }
 .start{
     margin-left: 190px;
@@ -39,19 +41,22 @@ h2{
 }
 .enemy{
     width: 50px;
-    height: 50px;
+
+}
+.enemy, .weak, .player{
     position: absolute;
-    background-size: contain;
-    background-repeat: no-repeat;
 }
 .weak{
     width: 80px;
     height: 80px;
     background-image: url(../img/small-enemy.png);
 }
+.enemy, .player{
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 .player{
     background-image: url(../img/batwing.png);
     width: 70px;
     height: 70px;
-    position: absolute;
 }
