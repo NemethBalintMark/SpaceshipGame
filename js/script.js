@@ -6,6 +6,7 @@ var scoreInterval = null;
 var lane = 6;
 var player;
 var laser = null;
+var enemies = [];
 
 
 document.querySelector(".startButton").addEventListener("click", () => {
@@ -25,6 +26,7 @@ document.querySelector(".startButton").addEventListener("click", () => {
         gameInterval = setInterval(() => {
             var x = (Math.floor(Math.random() * 12) + 1) * 50;
             var enemy = new Enemy(x, 0, "section");
+            enemies.push(enemy);
             enemy.fall();
         }, 1000);
     }

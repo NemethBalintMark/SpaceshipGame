@@ -22,6 +22,10 @@ class Enemy {
         this.#x = x;
     }
 
+    getX() {
+        return this.#x;
+    }
+
     setY(y) {
         this.#y = y;
     }
