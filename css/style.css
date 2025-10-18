@@ -6,6 +6,29 @@ body{
 section{
     width: 700px;
     height: 700px;
-    background-color: darkblue;
+    margin-left: 17%;
+}
+h2, section{
     border: 5px solid #fff;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+h2{
+    margin-left:460px;
+    width: 160px;
+    margin-bottom: -5px;
+}
+img{
+    width: 70px;
+    height: 70px;
+}
+.btn{
+    background-color: #000;
+    height: 50px;
+    font-size: 22px;
+    font-style: italic;
+    border: 2px solid #fff;
+}
+.start{
+    margin-left: 190px;
+    margin-top: 11px;
 }
