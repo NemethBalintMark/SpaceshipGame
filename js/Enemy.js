@@ -1,0 +1,65 @@
+class Enemy {
+    #health;
+    #isStrong;
+    #x;
+    #y;
+    #fallInterval;
+    #element;
+    #container;
+
+    constructor (x, y, container) {
+        this.setX(x);
+        this.setY(y);
+        this.setContainer(container);
+    }
+
+    setHealth(health) {
+        this.#health = health;
+    }
+    
+    setX(x) {
+        this.#x = x;
+    }
+    
+    setY(y) {
+        this.#y = y;
+    }
+    
+    setContainer(container) {
+        this.#container = document.querySelector(container);
+    }
+
+    createEnemy() {
+        this.#element = document.createElement("div");
+        this.#isStrong = parseInt(Math.random() * 2);
+        this.#element.classList.add(this.#isStrong == 0 ? "weak" : "strong");
+
+        this.#element.style.left = this.#x + "px";
+        this.#element.style.top = this.#y + "px";
+
+        this.#container.appendChild(this.#element);
+    }
+
+    fall(){
+        this.#fallInterval = setInterval( () => {
+            this.#y += 50;
+            this.#element.style.top = this.#y + "px";
+            if (this.#y > this.#container.offsetHeight) {
+                this.hit();
+                this.remove();
+            }
+        }, 500);
+    }
+
+    remove(){
+        this.#element.remove();
+        clearInterval(this.#fallInterval);
+    }
+
+    damage(){
+        this.#health -= 1;
+        if (this.#health == 0) {
+            this.remove();
+        }
+    }
+}
