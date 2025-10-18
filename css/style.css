@@ -34,9 +34,6 @@ h2{
 .stop{
     margin-left: 189px;
 }
-.weak{
-    background-image: url(../img/small-enemy.png);
-}
 .strong{
     background-image: url(../img/big-enemy.png);
 }
@@ -46,4 +43,9 @@ h2{
     position: absolute;
     background-size: contain;
     background-repeat: no-repeat;
+}
+.weak{
+    width: 80px;
+    height: 80px;
+    background-image: url(../img/small-enemy.png);
 }
