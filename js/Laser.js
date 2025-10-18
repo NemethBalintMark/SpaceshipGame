@@ -9,6 +9,7 @@ class Laser{
         this.setY(y);
         this.setContainer(container);
         this.#element = null;
+        this.createLaser();
     }
 
     setX(x) {
@@ -29,6 +30,8 @@ class Laser{
 
             this.#element.style.left = this.#x + "px";
             this.#element.style.top = this.#y + "px";
+
+            this.#element.classList.add("laser");
 
             this.#container.appendChild(this.#element);
             this.hit();

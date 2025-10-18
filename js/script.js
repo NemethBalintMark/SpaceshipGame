@@ -3,6 +3,9 @@ var gameInterval = null;
 var score = 0;
 var scoreSpan = document.querySelector(".scoredisplay");
 var scoreInterval = null;
+var lane = 6;
+var player;
+var laser = null;
 
 
 document.querySelector(".startButton").addEventListener("click", () => {
@@ -13,7 +16,7 @@ document.querySelector(".startButton").addEventListener("click", () => {
             updateScore(1);
         }, 1000);
 
-        var player = document.createElement("div");
+        player = document.createElement("div");
         gameArea.appendChild(player);
         player.classList.add("player");
         player.style.left = 300 + "px";
@@ -39,6 +42,7 @@ function lose() {
 
     document.querySelectorAll(".weak").forEach(weak => weak.remove());
     document.querySelectorAll(".strong").forEach(strong => strong.remove());
+    player.remove();
 
    // alert("Game over!");
 }
@@ -46,4 +50,29 @@ function lose() {
 function updateScore(newScore) {
     score += newScore;
     scoreSpan.innerHTML = score;
+}
+
+document.addEventListener("keydown", (event)=>{
+    var key = event.key;
+
+    if (key == "ArrowLeft" && lane > 1) {
+        lane -= 1;
+        move();
+    } else if (key == "ArrowRight" && lane < 12) {
+        lane += 1;
+        move();
+    }
+
+    if (key == "Space" && laser == null) {
+        var laser = new Laser(lane * 50, 350, gameArea);
+        laser.hit();
+        setTimeout( () => {
+            laser = null;
+        }, 500);
+    }
+
+})
+
+function move() {
+    player.style.left = lane * 50 + "px";
 }
