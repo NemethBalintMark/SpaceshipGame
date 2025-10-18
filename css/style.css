@@ -49,3 +49,8 @@ h2{
     height: 80px;
     background-image: url(../img/small-enemy.png);
 }
+.player{
+    background-image: url(../img/batwing.png);
+    width: 70px;
+    height: 70px;
+}
