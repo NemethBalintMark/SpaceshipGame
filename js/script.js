@@ -43,8 +43,6 @@ function lose() {
     document.querySelectorAll(".weak").forEach(weak => weak.remove());
     document.querySelectorAll(".strong").forEach(strong => strong.remove());
     player.remove();
-
-   // alert("Game over!");
 }
 
 function updateScore(newScore) {
@@ -55,16 +53,16 @@ function updateScore(newScore) {
 document.addEventListener("keydown", (event)=>{
     var key = event.key;
 
+    console.log(key);
+
     if (key == "ArrowLeft" && lane > 1) {
         lane -= 1;
         move();
     } else if (key == "ArrowRight" && lane < 12) {
         lane += 1;
         move();
-    }
-
-    if (key == "Space" && laser == null) {
-        var laser = new Laser(lane * 50, 350, gameArea);
+    }else if (key == " " && laser == null) {
+        laser = new Laser(lane * 50, 0, "section");
         laser.hit();
         setTimeout( () => {
             laser = null;

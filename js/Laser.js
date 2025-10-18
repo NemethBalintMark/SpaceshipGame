@@ -51,14 +51,14 @@ class Laser{
         var strongs = document.querySelectorAll(".strong");
 
         for (let i = 0; i < weaks.length; i++) {
-            if (weaks[i].getX() == this.#x) {
-                weaks[i].damage();
+            if (weaks[i].style.left == this.#x + "px") {
+                weaks[i].remove();
             }
         }
 
         for (let i = 0; i < strongs.length; i++) {
-            if (strongs[i].getX() == this.#x) {
-                strongs[i].damage();
+            if (strongs[i].style.left == this.#x + "px") {
+                strongs[i].remove();
             }
         }
     }

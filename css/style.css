@@ -43,7 +43,7 @@ h2{
     width: 50px;
 
 }
-.enemy, .weak, .player{
+.enemy, .weak, .player, .laser{
     position: absolute;
 }
 .weak{
@@ -61,5 +61,7 @@ h2{
     height: 70px;
 }
 .laser{
-    
+    background-image: url(../img/Laser.png);
+    width: 50px;
+    height: 600px;
 }
