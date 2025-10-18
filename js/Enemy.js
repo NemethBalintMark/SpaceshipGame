@@ -52,8 +52,8 @@ class Enemy {
             this.#y += 50;
             this.#element.style.top = this.#y + "px";
             if (this.#y >= 700) {
-                lose();
                 this.remove();
+                lose();
             }
         }, 500);
     }
